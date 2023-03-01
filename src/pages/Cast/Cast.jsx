@@ -46,7 +46,11 @@ const Cast = () => {
         {items?.map(({ cast_id, profile_path, name, character }) => (
           <li key={cast_id}>
             <img
-              src={profile_path ? (`https://image.tmdb.org/t/p/w500/${profile_path}`) : (`http://placehold.it/50x75/`)}
+              src={
+                profile_path
+                  ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+                  : `http://placehold.it/50x75/`
+              }
               alt={name}
               width="100"
             />

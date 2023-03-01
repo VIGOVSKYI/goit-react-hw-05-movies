@@ -69,8 +69,9 @@ const MovieDetails = () => {
             <img
               className={styles.detailsImage}
               src={
-                items?.poster_path ?
-                  (`https://image.tmdb.org/t/p/w400${items?.poster_path}`) : (`http://placehold.it/300`)
+                items?.poster_path
+                  ? `https://image.tmdb.org/t/p/w400${items?.poster_path}`
+                  : `http://placehold.it/300`
               }
               alt={items?.title}
               width="300"
