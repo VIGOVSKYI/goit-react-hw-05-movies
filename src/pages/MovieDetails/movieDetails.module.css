@@ -1,0 +1,65 @@
+.goBack {
+border: 1px solid rgb(129, 126, 126);
+background-color: rgba(0, 0, 0, 0);
+border-radius: 4px;
+width: 100px;
+font-size: 14px;
+line-height: 20px;
+margin: 10px;
+
+}
+
+.goBack:hover,
+.goBack:focus {
+    background-color: rgba(26, 2, 45, 0.1);
+}
+
+
+
+.MovieDetailsPage {
+    display: flex;
+    justify-content: space-between;
+    width: 630px;
+}
+
+.detailsImage {
+    width: 300px;
+    /* margin-right: 30px; */
+}
+
+.detailsImageWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.detailsContentWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.title,
+.userScore,
+.overViewTitle,
+.overView,
+.genresTitle {
+    margin-bottom: 20px;
+}
+
+.additionalInformationTitle {
+display: flex;
+padding: 20px;
+font-weight: bold;
+margin-right: auto;
+}
+
+.additionalInformationLink {
+display: flex;
+color: blue;
+margin-bottom: 10px;
+}
+.additionalInformationLink:hover,
+.additionalInformationLink:focus {
+color: red;
+}

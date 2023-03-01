@@ -1,0 +1,12 @@
+.moviesList {
+  padding: 20px;
+}
+
+.moviesItem {
+  margin-bottom: 6px;
+}
+
+.moviesItemLink:hover,
+.moviesItemLink:focus {
+  color: red;
+}
