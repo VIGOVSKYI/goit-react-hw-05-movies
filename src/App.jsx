@@ -1,5 +1,5 @@
 import { lazy, Suspense, React } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner';
 
 import NavBar from './components/NavBar/NavBar';
@@ -13,7 +13,7 @@ const Reviews = lazy(() => import('./pages/Reviews/Reviews'));
 export const App = () => {
   return (
     <div>
-      <BrowserRouter>
+    <BrowserRouter basename="/goit-react-hw-05-movies">
         <NavBar />
         <Suspense
           fallback={

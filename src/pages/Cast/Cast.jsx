@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCast } from '../../pages/shared/servises/movies-api.js';
-import { ColorRing } from 'react-loader-spinner';
+import Loading from '../../pages/shared/Loading/Loading';
 
 const Cast = () => {
   const { id } = useParams();
@@ -31,15 +31,7 @@ const Cast = () => {
       {error && <p>error</p>}
       {loading && (
         <div>
-          <ColorRing
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="blocks-loading"
-            wrapperStyle={{}}
-            wrapperClass="blocks-wrapper"
-            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-          />
+          <Loading />
         </div>
       )}
       <ul>
@@ -49,7 +41,7 @@ const Cast = () => {
               src={
                 profile_path
                   ? `https://image.tmdb.org/t/p/w500/${profile_path}`
-                  : `http://placehold.it/50x75/`
+                  : `https://placehold.it/50x75/`
               }
               alt={name}
               width="100"

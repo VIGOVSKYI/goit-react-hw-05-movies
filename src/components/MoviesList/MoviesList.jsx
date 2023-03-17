@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styles from './muviesList.module.css';
+import styles from './moviesList.module.css';
 
-const MuviesList = ({ items }) => {
+const MoviesList = ({ items }) => {
   const location = useLocation();
 
   const elements = items.map(({ id, title, name }) => (
@@ -21,13 +21,9 @@ const MuviesList = ({ items }) => {
   return <ul className={styles.moviesList}>{elements}</ul>;
 };
 
-export default MuviesList;
+export default MoviesList;
 
-MuviesList.defaultProps = {
-  items: [],
-};
-
-MuviesList.prototypes = {
+MoviesList.prototypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,

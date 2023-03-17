@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { fetchMovieTrending } from '../shared/servises/movies-api.js';
-import { ColorRing } from 'react-loader-spinner';
-import MuviesList from '../../components/MuviesList/MuviesList';
+import Loading from '../../pages/shared/Loading/Loading';
+import MuviesList from '../../components/MoviesList/MoviesList';
 
 const Home = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -29,18 +29,10 @@ const Home = () => {
       {error && <p>error</p>}
       {loading && (
         <div>
-          <ColorRing
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="blocks-loading"
-            wrapperStyle={{}}
-            wrapperClass="blocks-wrapper"
-            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-          />
+          <Loading />
         </div>
       )}
-      <MuviesList items={items} />
+      {items && <MuviesList items={items} />}
     </>
   );
 };

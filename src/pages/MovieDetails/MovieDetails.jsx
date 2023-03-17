@@ -6,7 +6,7 @@ import {
   Link,
   useLocation,
 } from 'react-router-dom';
-import { ColorRing } from 'react-loader-spinner';
+import Loading from '../../pages/shared/Loading/Loading';
 import { fetchMovieDetails } from '../../pages/shared/servises/movies-api.js';
 import styles from './movieDetails.module.css';
 
@@ -43,15 +43,7 @@ const MovieDetails = () => {
       {error && <p>error</p>}
       {loading && (
         <div>
-          <ColorRing
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="blocks-loading"
-            wrapperStyle={{}}
-            wrapperClass="blocks-wrapper"
-            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-          />
+          <Loading />
         </div>
       )}
       <button
@@ -71,7 +63,7 @@ const MovieDetails = () => {
               src={
                 items?.poster_path
                   ? `https://image.tmdb.org/t/p/w400${items?.poster_path}`
-                  : `http://placehold.it/300`
+                  : `https://placehold.it/300`
               }
               alt={items?.title}
               width="300"

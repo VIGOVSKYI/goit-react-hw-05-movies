@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { fetchMovieBySearchQuery } from '../shared/servises/movies-api.js';
-import { ColorRing } from 'react-loader-spinner';
+import Loading from '../../pages/shared/Loading/Loading';
 import SearchForm from '../../components/SearchForm/SearchForm';
-import MuviesList from '../../components/MuviesList/MuviesList';
+import MuviesList from '../../components/MoviesList/MoviesList';
 
 const MoviesSearch = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -32,7 +32,6 @@ const MoviesSearch = () => {
 
   const searchMovies = ({ search }) => {
     setSearchParams({ search });
-    setItems([]);
   };
 
   return (
@@ -41,18 +40,10 @@ const MoviesSearch = () => {
       <SearchForm onSubmit={searchMovies} />
       {loading && (
         <div>
-          <ColorRing
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="blocks-loading"
-            wrapperStyle={{}}
-            wrapperClass="blocks-wrapper"
-            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-          />
+          <Loading />
         </div>
       )}
-      <MuviesList items={items} />
+      {items && <MuviesList items={items} />}
     </>
   );
 };
